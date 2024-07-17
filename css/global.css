@@ -1,3 +1,19 @@
 body {
     background-color: black;
 }
+
+.site-header {
+    position: relative; /* or 'fixed' depending on your layout */
+    z-index: 1000; /* higher z-index */
+    /* Other styles */
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 1s;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+    background-color: rgba(26, 26, 26, 0.6) !important;
+    z-index: 2000;
+}
