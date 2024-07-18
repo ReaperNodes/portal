@@ -24,7 +24,6 @@ body {
     height: 100%;
     background-color: #303030; /* New color on hover */
     transition: top 0.3s ease-in-out;
-    z-index: 1;
 }
 
 .header-button:hover::before {
@@ -33,12 +32,24 @@ body {
 
 .header-button span {
     position: relative;
-    z-index: 2;
+    z-index: 1000;
     transition: color 0.3s ease-in-out;
 }
 
 .header-button-container {
     height: 100%;
+}
+
+@media (max-width: 660px) {
+    .header-button-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 661px) {
+    .header-button-mobile {
+        display: none;
+    }
 }
 
 .empty-block {
@@ -75,10 +86,17 @@ body {
 }
 
 .title-card {
-    margin-left: 200px;
+    margin-left: 20vw;
     font-size: 60px;
     transform: translateY(-10vh);
     font-weight: bolder;
+}
+
+@media (max-width: 1200px) {
+    .title-card {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
 }
 
 /* Hide scrollbar for WebKit browsers */
