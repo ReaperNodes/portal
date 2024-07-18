@@ -14,7 +14,7 @@ function drawGradient(cx, cy, radius) {
     // Define gradient
     var gradient = context.createRadialGradient(cx, cy, 0, cx, cy, radius);
     gradient.addColorStop(0, '#4e0000'); // Center color
-    gradient.addColorStop(1, '#151515'); // Edge color
+    gradient.addColorStop(1, '#000000'); // Edge color
 
     // Fill the canvas with the gradient
     context.fillStyle = gradient;
@@ -25,7 +25,7 @@ window.onload = function() {
     setCanvasSize();
 
     var canvas = document.getElementById('gradientCanvas');
-    var radius = Math.min(canvas.width, canvas.height) / 2; // Smaller radius
+    var radius = Math.min(canvas.width, canvas.height) / 1.6; // Smaller radius
 
     var currentX = canvas.width / 10;
     var currentY = canvas.height / 10;
@@ -44,7 +44,7 @@ window.onload = function() {
     function animate() {
         var distance = Math.sqrt(Math.pow(targetX - currentX, 2) + Math.pow(targetY - currentY, 2));
         var speed = canvas.height / 10; // pixels per second
-        var step = speed / 60; // pixels per frame (assuming 60fps)
+        var step = speed / 500; // pixels per frame (assuming 60fps)
 
         if (distance > step) {
             var angle = Math.atan2(targetY - currentY, targetX - currentX);
@@ -70,10 +70,6 @@ window.onresize = function() {
     var radius = Math.min(canvas.width, canvas.height) / 4; // Smaller radius
     drawGradient(cx, cy, radius);
 };
-
-
-
-
 
 $(document).ready(function() {
     $(window).on('scroll', function() {
