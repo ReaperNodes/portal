@@ -13,7 +13,7 @@ function drawGradient(cx, cy, radius) {
 
     // Define gradient
     var gradient = context.createRadialGradient(cx, cy, 0, cx, cy, radius);
-    gradient.addColorStop(0, '#4e0000'); // Center color
+    gradient.addColorStop(0, '#3e0000'); // Center color
     gradient.addColorStop(1, '#000000'); // Edge color
 
     // Fill the canvas with the gradient
@@ -21,55 +21,35 @@ function drawGradient(cx, cy, radius) {
     context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+function updateGradientOnScroll() {
+    var canvas = document.getElementById('gradientCanvas');
+    var radius = Math.min(canvas.width, canvas.height) / 1.5; // Smaller radius
+
+    // Calculate the scroll percentage
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = scrollTop / docHeight;
+
+    // Calculate the vertical position based on scroll percentage
+    var cy = canvas.height * (0.9 - 0.8 * scrollPercent); // 90% at top, 10% at bottom
+    var cx = canvas.width / 3; // Horizontal position in the center
+
+    drawGradient(cx, cy, radius);
+}
+
 window.onload = function() {
     setCanvasSize();
-
-    var canvas = document.getElementById('gradientCanvas');
-    var radius = Math.min(canvas.width, canvas.height) / 1.6; // Smaller radius
-
-    var currentX = canvas.width / 10;
-    var currentY = canvas.height / 10;
-    var targetX = currentX;
-    var targetY = currentY;
-
-    // Initial draw
-    drawGradient(currentX, currentY, radius);
-
-    // Update target position on mouse move
-    window.onmousemove = function(event) {
-        targetX = event.clientX;
-        targetY = event.clientY;
-    };
-
-    function animate() {
-        var distance = Math.sqrt(Math.pow(targetX - currentX, 2) + Math.pow(targetY - currentY, 2));
-        var speed = canvas.height / 10; // pixels per second
-        var step = speed / 500; // pixels per frame (assuming 60fps)
-
-        if (distance > step) {
-            var angle = Math.atan2(targetY - currentY, targetX - currentX);
-            currentX += step * Math.cos(angle);
-            currentY += step * Math.sin(angle);
-        } else {
-            currentX = targetX;
-            currentY = targetY;
-        }
-
-        drawGradient(currentX, currentY, radius);
-        requestAnimationFrame(animate);
-    }
-
-    animate();
+    updateGradientOnScroll();
+    window.addEventListener('scroll', updateGradientOnScroll);
 };
 
 window.onresize = function() {
     setCanvasSize();
-    // Redraw the gradient on resize to avoid blank canvas
-    var cx = canvas.width / 2;
-    var cy = canvas.height / 2;
-    var radius = Math.min(canvas.width, canvas.height) / 4; // Smaller radius
-    drawGradient(cx, cy, radius);
+    updateGradientOnScroll();
 };
+
+
+
 
 $(document).ready(function() {
     $(window).on('scroll', function() {

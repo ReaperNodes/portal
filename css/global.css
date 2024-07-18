@@ -60,3 +60,34 @@ body {
     background-color: rgba(30, 30, 30, 60%);
     transition: all 0.9s ease-in-out;
 }
+
+.gradient-canvas {
+    position: fixed;
+    z-index: -1000;
+}
+
+.front-cover {
+    height: 100vh;
+    border-color: aqua;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.title-card {
+    margin-left: 200px;
+    font-size: 60px;
+    transform: translateY(-10vh);
+    font-weight: bolder;
+}
+
+/* Hide scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+/* Hide scrollbar for all other browsers */
+body, html {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
