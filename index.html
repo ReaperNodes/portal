@@ -14,10 +14,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<nav class="bg-black text-white">
+<nav class="text-white nav-bar-identifier nav-bar">
     <div class="site-header flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <div class="flex justify-start items-center">
-            <a class="flex mr-6 xl:mr-8" href="">
+            <a class="flex mr-6 xl:mr-8 px-2" href="">
                 <img src="assets/img/rnodes.webp" class="mr-3 h-8 rounded" alt="ReaperNodes Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap">ReaperNodes</span>
             </a>
@@ -30,6 +30,11 @@
         </div>
     </div>
 </nav>
+
+<canvas id="gradientCanvas"></canvas>
+
+<nav class="empty-block"></nav>
+
 <section>
 </section>
 <script src="js/scripts.js"></script>
