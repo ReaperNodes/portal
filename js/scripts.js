@@ -47,16 +47,3 @@ window.onresize = function() {
     setCanvasSize();
     updateGradientOnScroll();
 };
-
-
-
-
-$(document).ready(function() {
-    $(window).on('scroll', function() {
-        if ($(window).scrollTop() === 0) {
-            $('.nav-bar-identifier').removeClass('nav-bar-scrolled').addClass('nav-bar');
-        } else {
-            $('.nav-bar-identifier').removeClass('nav-bar').addClass('nav-bar-scrolled');
-        }
-    });
-});
