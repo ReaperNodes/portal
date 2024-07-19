@@ -79,8 +79,6 @@ body {
 
 .front-cover {
     height: 100vh;
-    border-color: aqua;
-    border-width: 2px;
     display: flex;
     align-items: center;
 }
