@@ -3,6 +3,14 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-snap {
+    scroll-snap-align: start;
+}
+
 .site-header {
     position: relative;
     z-index: 1000;
