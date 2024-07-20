@@ -89,19 +89,14 @@ body {
 
 @media (max-width: 1200px) {
     .title-card {
-        margin-left: 10vw;
-        margin-right: 10vw;
+        margin-left: 6vw;
+        margin-right: 6vw;
     }
 }
 
 @media (max-width: 660px) {
     .header-button-desktop {
         display: none;
-    }
-
-    .title-card {
-        font-size: 40px;
-        margin-left: 2px;
     }
 }
 
