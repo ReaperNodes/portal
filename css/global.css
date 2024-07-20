@@ -98,6 +98,12 @@ html {
     font-weight: bolder;
 }
 
+@media (max-width: 660px) {
+    .title-card {
+        font-size: 40px;
+    }
+}
+
 @media (max-width: 1200px) {
     .title-card {
         margin-left: 10vw;
