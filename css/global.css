@@ -40,16 +40,6 @@ body {
     height: 100%;
 }
 
-@media (max-width: 660px) {
-    .header-button-desktop {
-        display: none;
-    }
-
-    .title-card {
-        font-size: 40px;
-    }
-}
-
 @media (min-width: 661px) {
     .header-button-mobile {
         display: none;
@@ -101,6 +91,17 @@ body {
     .title-card {
         margin-left: 10vw;
         margin-right: 10vw;
+    }
+}
+
+@media (max-width: 660px) {
+    .header-button-desktop {
+        display: none;
+    }
+
+    .title-card {
+        font-size: 40px;
+        margin-left: 2px;
     }
 }
 
