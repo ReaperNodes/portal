@@ -81,8 +81,8 @@ body {
 }
 
 .title-card {
-    margin-left: 20vw;
-    font-size: 12vw;
+    margin-left: 16vw;
+    font-size: 6vw;
     transform: translateY(-10vh);
     font-weight: bolder;
 }
