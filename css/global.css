@@ -44,6 +44,10 @@ body {
     .header-button-desktop {
         display: none;
     }
+
+    .title-card {
+        font-size: 40px;
+    }
 }
 
 @media (min-width: 661px) {
